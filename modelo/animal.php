@@ -26,84 +26,77 @@ public function getId(){
 
 public function getEspecie(){
     return $this->especie;
-    }
-    
-    public function setEspecie($especie){
+    }    
+public function setEspecie($especie){
     $this->especie=$especie;
 }
  
  
 public function getRaza(){
     return $this->raza;
-    }
-        
-    public function setRaza($raza){
+    }   
+public function setRaza($raza){
     $this->raza=$raza;
 }
 
 
 public function getColor(){
     return $this->color;
-    }
-            
-    public function setColor($color){
+    }            
+public function setColor($color){
     $this->color=$color;
 }
 
+
 public function getNombreanimal(){
     return $this->nombre;
-    }
+}
                 
-    public function setNombreanimal($nombre){
+public function setNombreanimal($nombre){
     $this->nombre=$nombre;
 }
   
 public function getImagen(){
     return $this->imagen;
-    }
-                    
-    public function setImagen($imagen){
+}                    
+public function setImagen($imagen){
     $this->imagen=$imagen;
-    }
-
 }
+
+
 
 public function getFecha(){
     return $this->fecha;
-    }
-                    
-    public function setFecha($fecha){
-    $this->fecha=$fecha;
-    }
-
 }
+public function setFecha($fecha){
+    $this->fecha=$fecha;
+}
+
+
 
 public function getZona(){
     return $this->zona;
-    }
-                    
-    public function setZona($zona){
+}                    
+public function setZona($zona){
     $this->zona=$zona;
-    }
-
 }
+
+
 
 public function getNombrepersona(){
     return $this->nombrepersona;
-    }
-                    
-    public function setNombrepersona($fecha){
-    $this->nombrepersona=$nombrepersona;
-    }
-
 }
+public function setNombrepersona($fecha){
+    $this->nombrepersona=$nombrepersona;
+}
+
+
 
 public function getTelefono(){
     return $this->telefono;
-    }
-                    
-    public function setTelefono($telefono){
+}
+public function setTelefono($telefono){
     $this->telefono=$telefono;
-    }
+}
 
 }
