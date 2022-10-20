@@ -1,7 +1,7 @@
 <?php
 include("animal.php");
 
-class manejo_objetos(){
+class manejo_objetos{
 
 
 private $conexion;
@@ -18,7 +18,7 @@ public function getContenidoPorFecha(){
 
     $matriz=array();
     $contador=0;
-    $resultado=$this-conexion->query("SELECT * FROM bd_web ORDER BY FECHA");
+    $resultado=$this->conexion->query("SELECT * FROM animal ORDER BY FECHA");
 
      while($registro=$resultado->fetch(PDO::FETCH_ASSOC)) {
        
@@ -48,13 +48,10 @@ public function insertContenido(animal $blog){
 
 //    insertar contenido a la BD 
 
-$sql= "INSERT INTO bd_web"
+$sql= "INSERT INTO animal"
 
 }
 
 }
-
-
-
 
 ?>
