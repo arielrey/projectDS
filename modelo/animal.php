@@ -7,7 +7,7 @@ private $id;
 private $especie;
 private $raza;
 private $color;
-private $nombreanimal;
+private $nombre;
 private $imagen;
 private $fecha;
 private $zona;
@@ -86,7 +86,7 @@ public function setZona($zona){
 public function getNombrepersona(){
     return $this->nombrepersona;
 }
-public function setNombrepersona($fecha){
+public function setNombrepersona($nombrepersona){
     $this->nombrepersona=$nombrepersona;
 }
 
