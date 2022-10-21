@@ -6,7 +6,7 @@
         <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     </head>
-    <body>
+    <body class="bg-image p-5 text-center shadow-1-strong rounded mb-5" style="background-image" href>
         <!-- MENU DE INICIO -->
         <nav class="nav p-3 justify-content-end">
             <a href="inicio.html" class="nav-link active" aria-current="page">Inicio</a>
@@ -28,38 +28,38 @@
                 </svg>    
             </a>
         </nav>
-        <h2  class="text-center">Publica los datos de tu mascota perdida</h2>
+        <h2  class="text-center">Publica los datos de tu mascota perdida 🐾</h2>
         <!-- FOMRULARIO -->
-        <form action="../controlador/Transacciones.php" method="post" enctype="multipart/form-data" name="forml" ">
+        <form action="../controlador/Transacciones.php" method="post" enctype="multipart/form-data" name="forml" class="shadow-lg p-3 mb-5 bg-body rounded container">
             <table class="d-flex justify-content-center">
                 <div class="form-floating mb-3 justify-content-center">
                     <!-- Especie -->
                     <tr>  
                         <td>
-                            <label for="campo_especie"></label>
+                            <label for="especie"></label>
                         </td>
-                        <td><input type="text" name="campo_especie" id="campo_especie" class="form-control" placeholder="Especie"></td>
+                        <td><input type="text" name="especie" id="especie" class="form-control" placeholder="Especie"></td>
                     </tr>
                     <!-- Raza -->
                     <tr>
                         <td>
-                            <label for="campo_raza"></label>
+                            <label for="raza"></label>
                         </td>
-                        <td><input type="text" name="campo_raza" id="campo_raza"  class="form-control" placeholder="Raza"></td>
+                        <td><input type="text" name="raza" id="raza"  class="form-control" placeholder="Raza"></td>
                     </tr>
                     <!-- Color -->
                     <tr>
                         <td>
-                            <label for="campo_color"></label>
+                            <label for="color"></label>
                         </td>
-                        <td><input type="text" name="campo_color" id="campo_color"  class="form-control" placeholder="Color"></td>
+                        <td><input type="text" name="color" id="color"  class="form-control" placeholder="Color"></td>
                     </tr>
                     <!-- Nombre -->
                     <tr>
                         <td>
-                            <label for="campo_nombre"></label>
+                            <label for="nombre"></label>
                         </td>
-                        <td><input type="text" name="campo_nombre" id="campo_nombre"  class="form-control" placeholder="Nombre"></td>
+                        <td><input type="text" name="nombre" id="nombre"  class="form-control" placeholder="Nombre"></td>
                     </tr>
                     <!-- Imagen -->
                     <tr>
@@ -71,44 +71,37 @@
                     <!-- Fecha -->
                     <tr>
                         <td>
-                            <label for="campo_fecha"></label>
+                            <label for="fecha"></label>
                         </td>
-                        <td><input type="date" name="fecha" id="campo_fecha">  Fecha en la que se perdio</td>
-                    </tr><br>
-                    <!-- Zona -->
-                    <tr class="d-flex justify-content-center ">            
-                        <td class="col-md-5">    
-                            <div>
-                                <select for="campo_zona" class="form-select" aria-label="Default select example">
-                                    <option selected>Zona</option>
-                                    <option value="centro" id="campo_zona">Zona Centro</option>
-                                    <option value="norte" id="campo_zona">Zona Norte</option>
-                                    <option value="sur" id="campo_zona">Zona Sur</option>
-                                    <option value="este" id="campo_zona">Zona Este</option>
-                                    <option value="oeste" id="campo_zona">Zona Oeste</option>
-                                </select>
-                            </div>
-                        </td>
+                        <td class="fw-light">Fecha en la que se perdio:<input type="date" name="fecha" id="fecha" class="form-control"></td>
                     </tr>
+
                     <!-- Nombre Persona-->
                     <tr>
                         <td>
-                            <label for="campo_nombrepersona"></label>
-                        </td>
-                        <td><input type="text" name="campo_nombrepersona" id="campo_nombrepersona"  class="form-control" placeholder="Nombre y Apellido"></td>
+                            <label for="nombrepersona"></label>
+                        </td><br>
+                        <td><br><p class="fw-bold text-center">Tus datos:</p><input type="text" name="nombrepersona" id="nombrepersona"  class="form-control" placeholder="Nombre y Apellido"></td>
                     </tr>
                     <!-- Telefono -->
                     <tr>
                         <td>
-                            <label for="campo_telefono"></label>
+                            <label for="telefono"></label>
                         </td>
-                        <td><input type="tel" name="campo_telefono" id="campo_telefono"  class="form-control" placeholder="Telefono"></td>
+                        <td><input type="tel" name="telefono" id="telefono"  class="form-control" placeholder="Telefono"></td>
                     </tr>
+
+
+
+
+
+
             </table><br>
+
             <div class="container">
                 <div class="col-md-12 text-center">
-                    <button type="button" class="btn btn-primary">Enviar</button>
-                    <button type="button" class="btn btn-warning">Cancelar</button>
+                    <button type="button" class="btn btn-success">Enviar</button>
+                    <button type="button" class="btn btn-danger">Cancelar</button>
                 </div>
             </div>
         </form>
