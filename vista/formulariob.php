@@ -57,9 +57,9 @@
                     <!-- Nombre -->
                     <tr>
                         <td>
-                            <label for="nombre"></label>
+                            <label for="nombreanimal"></label>
                         </td>
-                        <td><input type="text" name="nombre" id="nombre"  class="form-control" placeholder="Nombre"></td>
+                        <td><input type="text" name="nombreanimal" id="nombreanimal"  class="form-control" placeholder="Nombre del Animal"></td>
                     </tr>
                     <!-- Imagen -->
                     <tr>
@@ -75,7 +75,21 @@
                         </td>
                         <td class="fw-light">Fecha en la que se perdio:<input type="date" name="fecha" id="fecha" class="form-control"></td>
                     </tr>
-
+                     <!-- Zona donde se perdio -->
+                     <tr>
+                        <td>
+                     <div> 
+                     <select class="form-select" style="justify-content-center" id="zona" aria-label="zona">
+                     <option selected>Elegir zona...</option>
+                     <option value="1">Centro</option>
+                     <option value="2">Norte</option>
+                     <option value="3">Sur</option>
+                     <option value="4">Oeste</option>
+                     </select>
+                     <label for="zona">Zona donde se lo vio por ultima vez</label>
+                     </div>
+                     </td>
+                    </tr>
                     <!-- Nombre Persona-->
                     <tr>
                         <td>

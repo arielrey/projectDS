@@ -7,7 +7,7 @@ private $id;
 private $especie;
 private $raza;
 private $color;
-private $nombre;
+private $nombreanimal;
 private $imagen;
 private $fecha;
 private $zona;
@@ -49,11 +49,11 @@ public function setColor($color){
 
 
 public function getNombreanimal(){
-    return $this->nombre;
+    return $this->nombreanimal;
 }
                 
-public function setNombreanimal($nombre){
-    $this->nombre=$nombre;
+public function setNombreanimal($nombreanimal){
+    $this->nombreanimal=$nombreanimal;
 }
   
 public function getImagen(){

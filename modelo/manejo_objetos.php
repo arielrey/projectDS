@@ -28,7 +28,7 @@ public function getContenidoPorFecha(){
         $blog->setEspecie($registro["especie"]);
         $blog->setRaza($registro["raza"]);
         $blog->setColor($registro["color"]);
-        $blog->setNombre($registro["nombre"]);
+        $blog->setNombreanimal($registro["nombreanimal"]);
         $blog->setImagen($registro["imagen"]);
         $blog->setFecha($registro["fecha"]);
         $blog->setZona($registro ["zona"]);
@@ -48,8 +48,8 @@ public function insertContenido(animal $blog){
 
 //    insertar contenido a la BD 
 
-$sql= "INSERT INTO animal"
-
+$sql= "INSERT INTO animal (especie, raza, color, nombreanimal, imagen, fecha, zona, nombrepersona, telefono) VALUES('" . $blog->getEspecie() . "','" $blog
+$sql= "INSERT INTO animal (especie, raza, color, nombreanimal, imagen, fecha, zona, nombrepersona, telefono) VALUES ('" . $blog->getEspecie() .  "','" . $blog->getRaza() .  "','" . $blog->getColor() .  "','" . $blog->getNombreanimal() .  "','" . $blog->getImagen() .  "','" . $blog->getFecha() .  "','" . $blog->getZona() .  "','" . $blog->getNombrepersona() . "')";
 }
 
 }
