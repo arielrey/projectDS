@@ -10,7 +10,7 @@
         <!-- MENU DE INICIO -->
         <nav class="nav p-3 justify-content-end">
             <a href="inicio.html" class="nav-link active" aria-current="page">Inicio</a>
-            <a href="#" class="nav-link active">Perdidos</a>
+            <a href="mostrar_public.php" class="nav-link active">Perdidos</a>
             <a href="msjV.html" class="nav-link active">Adoptar</a>
             <!-- Dropdown -->
             <div class="btn-group">
@@ -30,7 +30,7 @@
         </nav>
         <h2  class="text-center">Publica los datos de tu mascota perdida 🐾</h2>
         <!-- FOMRULARIO -->
-        <form action="../controlador/Transacciones.php" method="post" enctype="multipart/form-data" name="forml" class="shadow-lg p-3 mb-5 bg-body rounded container">
+        <form action="../controlador/transacciones.php" method="post" enctype="multipart/form-data" name="forml" class="shadow-lg p-3 mb-5 bg-body rounded container">
             <table class="d-flex justify-content-center">
                 <div class="form-floating mb-3 justify-content-center">
                     <!-- Especie -->
@@ -72,12 +72,12 @@
                      <tr>
                         <td>
                      <div> 
-                     <select class="form-select" style="justify-content-center" id="zona" aria-label="zona">
+                     <select class="form-select"id="zona" name="zona" aria-label="zona">
                      <option selected>Elegir zona...</option>
-                     <option value="1">Centro</option>
-                     <option value="2">Norte</option>
-                     <option value="3">Sur</option>
-                     <option value="4">Oeste</option>
+                     <option value="centro">Centro</option>
+                     <option value="norte">Norte</option>
+                     <option value="sur">Sur</option>
+                     <option value="oeste">Oeste</option>
                      </select>
                      <label for="zona">Zona donde se lo vio por ultima vez</label>
                      </div>

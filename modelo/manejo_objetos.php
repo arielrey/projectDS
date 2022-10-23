@@ -1,8 +1,7 @@
 <?php
-include("animal.php");
+include_once("animal.php");
 
 class manejo_objetos{
-
 
 private $conexion;
 
@@ -48,9 +47,11 @@ public function insertContenido(animal $blog){
 
 //    insertar contenido a la BD 
 
-$sql= "INSERT INTO animal (especie, raza, color, nombreanimal, imagen, fecha, zona, nombrepersona, telefono) VALUES ('" . $blog->getEspecie() .  "','" . $blog->getRaza() .  "','" . $blog->getColor() .  "','" . $blog->getNombreanimal() .  "','" . $blog->getImagen() .  "','" . $blog->getFecha() .  "','" . $blog->getZona() .  "','" . $blog->getNombrepersona() . "','" . $blog->getTelefono() . "')";
-}
+$sql="INSERT INTO animal (especie, raza, color, nombreanimal, imagen, fecha, zona, nombrepersona, telefono) VALUES ('" . $blog->getEspecie() . "','" . $blog->getRaza() . "','" . $blog->getColor() . "','" . $blog->getNombreanimal() . "','" . $blog->getImagen() . "','" . $blog->getFecha() . "','" . $blog->getZona() . "','" . $blog->getNombrepersona() . "','" . $blog->getTelefono() . "')";
 
 }
+
+
+} 
 
 ?>
