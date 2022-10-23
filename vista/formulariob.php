@@ -68,13 +68,6 @@
                         </td>
                         <td><input type="file" src="" alt="" name="imagen" accept=".jpg, .png, .jpeg" id="imagen"  class="form-control" placeholder="Imagen"><br></td>
                     </tr>
-                    <!-- Fecha -->
-                    <tr>
-                        <td>
-                            <label for="fecha"></label>
-                        </td>
-                        <td class="fw-light">Fecha en la que se perdio:<input type="date" name="fecha" id="fecha" class="form-control"></td>
-                    </tr>
                      <!-- Zona donde se perdio -->
                      <tr>
                         <td>
@@ -107,8 +100,8 @@
             </table><br>
             <div class="container">
                 <div class="col-md-12 text-center">
-                    <button type="button" class="btn btn-success">Enviar</button>
-                    <button type="button" class="btn btn-danger">Cancelar</button>
+                    <input type="submit" value="Enviar" class="btn btn-success">
+                    <input type="submit" value="Cancelar" class="btn btn-danger">
                 </div>
             </div>
         </form>
