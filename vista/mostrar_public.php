@@ -11,7 +11,7 @@
         <!-- MENU DE INICIO -->
         <nav class="nav p-3 justify-content-end">
             <a href="inicio.html" class="nav-link active" aria-current="page">Inicio</a>
-            <a href="#" class="nav-link active">Perdidos</a>
+            <a href="mostrar_public.php" class="nav-link active">Perdidos</a>
             <a href="msjV.html" class="nav-link active">Adoptar</a>
             <!-- Dropdown -->
             <div class="btn-group">
@@ -30,15 +30,6 @@
                 </svg>    
             </a>
         </nav>
-
-
-
-
-
-
-
-
-
         <?php
         include("../modelo/manejo_objetos.php");
 
@@ -50,7 +41,7 @@
             $manejo_objetos=new manejo_objetos($miconexion);
             $tabla_blog=$manejo_objetos->getContenidoPorFecha();
             if (empty($tabla_blog)){
-                echo "No hay publicaciones aun"
+                echo "No hay publicaciones aun";
             }
             else {
                 foreach($tabla_blog as $valor) {
@@ -58,22 +49,23 @@
                     echo "<h3>". $valor->getRaza() . "</h3>";
                     echo "<h3>". $valor->getColor() . "</h3>";
                     echo "<h3>". $valor->getNombreanimal() . "</h3>";
-                    echo "<h3>". $valor->getImagen() . "</h3>";
+                    if ($valor->getImagen() !="") {
+                        echo "<img src='../imagenes";
+                        echo $valor->getImagen() . "' width='300px' height='200px' />";
+                    }
+                    echo "<hr/>";
                     echo "<h3>". $valor->getFecha() . "</h3>";
                     echo "<h3>". $valor->getZona() . "</h3>";
                     echo "<h3>". $valor->getNombrepersona() . "</h3>";
                     echo "<h3>". $valor->getTelefono() . "</h3>";
                 }
             }
-        } catch (\Throwable $th) {
-            //throw $th;
+        } catch (Exception $e) {
+            die ("Error: " . $e->getMessage());
         }
-        
-        
-        
         ?>
-
-
+        <br>
+        <a href="formulariob.php">Volver a la pagina de insercion </a>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>

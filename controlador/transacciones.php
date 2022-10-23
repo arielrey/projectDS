@@ -11,7 +11,7 @@
         <!-- MENU DE INICIO -->
         <nav class="nav p-3 justify-content-end">
             <a href="inicio.html" class="nav-link active" aria-current="page">Inicio</a>
-            <a href="#" class="nav-link active">Perdidos</a>
+            <a href="mostrar_public.php" class="nav-link active">Perdidos</a>
             <a href="msjV.html" class="nav-link active">Adoptar</a>
             <!-- Dropdown -->
             <div class="btn-group">
@@ -30,20 +30,12 @@
                 </svg>    
             </a>
         </nav>
-
         <?php
-
-        include("../modelo/animal.php");
-        include ("../modelo/manejo_objetos.php");
+        include_once("../modelo/animal.php");
+        include_once("../modelo/manejo_objetos.php");
         try{
             $miconexion=new PDO ('mysql:host=localhost; dbname=animalbd', 'root', '');
             $miconexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-            if (!$miconexion){
-                echo "La conexion ha fallado" . mysqli_error();
-                exit();
-            }
-
             if ($_FILES ['imagen'] ['error']){
                 switch ($_FILES['imagen']['error']){
                     case 1: //error exceso de tamaño de archivo en php.ini
@@ -65,20 +57,15 @@
             }else{
                 echo "Entrada subida correctamente <br>";
                 if((isset($_FILES['imagen']['name']) && ($_FILES['imagen'] ['error']==UPLOAD_ERR_OK))){
-                    $destino_de_ruta="img/";
+                    $destino_de_ruta="../imagenes/";
                     move_uploaded_file ($_FILES['imagen']['tmp_name'], $destino_de_ruta . $_FILES ['imagen']['name']);
                 echo "El archivo" . $_FILES['imagen'] ['name'] . "Se ha copiado en el directorio de imagenes";
-
             } else {
-                echo "El archivo no se ha podido copiar al directorio de imagenes"; 
-
+                echo "El archivo no se ha podido copiar al directorio de imagenes";
             }
         }
-
         $manejo_objetos=new manejo_objetos($miconexion);
-
-
-        $blog=new objetoAnimal();
+        $blog=new animal();
         $blog->setEspecie(htmlentities(addslashes($_POST['especie']), ENT_QUOTES));
         $blog->setRaza(htmlentities(addslashes($_POST['raza']), ENT_QUOTES));
         $blog->setColor(htmlentities(addslashes($_POST['color']), ENT_QUOTES));
@@ -88,18 +75,11 @@
         $blog->setZona(htmlentities(addslashes($_POST['zona']), ENT_QUOTES));
         $blog->setNombrepersona(htmlentities(addslashes($_POST['nombrepersona']), ENT_QUOTES));
         $blog->setTelefono(htmlentities(addslashes($_POST['telefono']), ENT_QUOTES));
-        
-        
-        $manejo_objetos->insertarContenido($blog);
-
+        $manejo_objetos->insertContenido($blog);
         echo "<br> Se ha publicado con exito";
-
         }catch(Exception $e){
             die ("Error: " . $e->getMessage());
         }
-
-        
-
         ?>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
