@@ -31,7 +31,7 @@
             </a>
         </nav>
         <?php
-        include("../modelo/manejo_objetos.php");
+        include_once("../modelo/manejo_objetos.php");
 
 
         try {
