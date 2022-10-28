@@ -7,7 +7,29 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     </head>
     <body>
-        
+    <?php 
+
+include_once("conexion.php");/*
+include_once("../modelo/animal.php");
+include_once("../modelo/manejo_objetos.php");*/
+include_once("../vista/formulariob.php");
+if (isset($_POST['submit'])) {
+    if (strlen($_POST['especie']) >= 1 && strlen($_POST['raza']) >= 1 && strlen($_POST['color']) >= 1 && strlen($_POST['nombreanimal']) >= 1 && strlen( $_FILES['imagen']['name']) >= 1 && strlen($_POST['zona']) >= 1 && strlen($_POST['nombrepersona']) >= 1 && strlen($_POST['telefono']) >= 1) {
+	    $especie = trim($_POST['especie']);
+	    $raza = trim($_POST['raza']);
+	    $color = trim($_POST['color']);
+        $nombreanimal = trim($_POST['nombreanimal']);
+        $imagen = trim($_FILES['imagen']['name']);
+        $fecha = date("y/m/d");
+        $zona = trim($_POST['zona']);
+        $nombrepersona = trim($_POST['nombrepersona']);
+        $telefono = trim($_POST['telefono']);
+	    $consulta = "INSERT INTO animal(especie, raza, color, nombreanimal, imagen, fecha, nombrepersona, telefono) VALUES ('$especie','$raza','$color','$nombreanimal','$imagen','$fecha','$nombrepersona','$telefono')";
+	    $resultado = mysqli_query($conexion,$consulta);
+	   
+}
+
+?>
         <!-- MENU DE INICIO -->
         <nav class="nav p-3 justify-content-end">
             <a href="inicio.html" class="nav-link active" aria-current="page">Inicio</a>
@@ -30,58 +52,20 @@
                 </svg>    
             </a>
         </nav>
+
+
         <?php
-        include_once("../modelo/animal.php");
-        include_once("../modelo/manejo_objetos.php");
-        try{
-            $miconexion=new PDO ('mysql:host=localhost; dbname=animalbd', 'root', '');
-            $miconexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            if ($_FILES ['imagen'] ['error']){
-                switch ($_FILES['imagen']['error']){
-                    case 1: //error exceso de tamaño de archivo en php.ini
-                        echo "El tamaño del archivo excede lo permitido por el servidor (param upload_max_size de php.ini)";
-                        break;
+ if ($resultado) {
+    echo "Se cargo con exito";
+} else {
+    echo "No se cargo";
+}
+}   else {
+    echo "Completar los campos";
+}
+?>
 
-                    case 2: //Error tamaño archivo marcado desde formulario
-                        echo "El tamaño del archivo excede 2MB";
-                        break;
-
-                    case 3: //Corrupcion de archivo}
-                        echo "El envio del archivo se interrumpio";
-                        break;
-
-                    case 4: //No hay fichero}
-                        echo "No se ha enviado ningun archivo";
-                        break;
-                }
-            }else{
-                echo "Entrada subida correctamente <br>";
-                if((isset($_FILES['imagen']['name']) && ($_FILES['imagen'] ['error']==UPLOAD_ERR_OK))){
-                    $destino_de_ruta="../imagenes/";
-                    move_uploaded_file ($_FILES['imagen']['tmp_name'], $destino_de_ruta . $_FILES ['imagen']['name']);
-                echo "El archivo" . $_FILES['imagen'] ['name'] . "Se ha copiado en el directorio de imagenes";
-            } else {
-                echo "El archivo no se ha podido copiar al directorio de imagenes";
-            }
-        }
-        $manejo_objetos=new manejo_objetos($miconexion);
-        $blog=new animal();
-        $blog->setEspecie(htmlentities(addslashes($_POST['especie']), ENT_QUOTES));
-        $blog->setRaza(htmlentities(addslashes($_POST['raza']), ENT_QUOTES));
-        $blog->setColor(htmlentities(addslashes($_POST['color']), ENT_QUOTES));
-        $blog->setNombreanimal(htmlentities(addslashes($_POST['nombreanimal']), ENT_QUOTES));
-        $blog->setImagen($_FILES['imagen']['name']);
-        $blog->setFecha(Date("Y-m-d H:i:s"));
-        $blog->setZona(htmlentities(addslashes($_POST['zona']), ENT_QUOTES));
-        $blog->setNombrepersona(htmlentities(addslashes($_POST['nombrepersona']), ENT_QUOTES));
-        $blog->setTelefono(htmlentities(addslashes($_POST['telefono']), ENT_QUOTES));
-        $manejo_objetos->insertContenido($blog);
-        echo "<br> Se ha publicado con exito";
-        }catch(Exception $e){
-            die ("Error: " . $e->getMessage());
-        }
-        ?>
-        <!-- JavaScript Bundle with Popper -->
+<!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>
 </html>
