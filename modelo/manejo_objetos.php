@@ -52,5 +52,28 @@ public function insertContenido(animal $blog){
         $this->conexion->exec($sql); */
 
     } 
+
+
+
+
+
+
+
+
+
+
+
+    public function editar($id)
+    {
+    /*    $this->animal->set("id", $id);
+          $datos= $this->animal->view();
+          return $datos;
+*/
+
+    }
 }
+
+
+
+
 ?>

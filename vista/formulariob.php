@@ -2,11 +2,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title> Formulario para buscar...</title>
+        <title> Formulario </title>
         <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     </head>
-    <body class="bg-image p-5 text-center shadow-1-strong rounded mb-5">
+    <body>
         <!-- MENU DE INICIO -->
         <nav class="nav p-3 justify-content-end">
             <a href="inicio.html" class="nav-link active" aria-current="page">Inicio</a>
@@ -28,7 +28,7 @@
                 </svg>    
             </a>
         </nav>
-        <h2  class="text-center">Publica los datos de tu mascota perdida 🐾</h2>
+        <h2  class="text-center">🐾Publica los datos de tu mascota perdida 🐾</h2>
         <!-- FOMRULARIO -->
         <form  method="post" action="../controlador/transacciones.php" enctype="multipart/form-data" name="forml" class="shadow-lg p-3 mb-5 bg-body rounded container">
             <table class="d-flex justify-content-center">
@@ -77,6 +77,7 @@
                      <option value="centro">Centro</option>
                      <option value="norte">Norte</option>
                      <option value="sur">Sur</option>
+                     <option value="este">Este</option>
                      <option value="oeste">Oeste</option>
                      </select>
                      <label for="zona">Zona donde se lo vio por ultima vez</label>
@@ -104,7 +105,6 @@
                     <input type="submit" value="Cancelar" class="btn btn-danger">
                 </div>
             </div>
-            <?php include_once("../controlador/transacciones.php"); ?>
         </form>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

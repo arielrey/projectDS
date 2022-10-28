@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title> Inicio </title>
+        <title> Perdidos </title>
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     </head>
@@ -30,6 +30,10 @@
                 </svg>    
             </a>
         </nav>
+
+        <div class="shadow-lg p-3 mb-5 bg-body rounded container">
+
+            <div class="text-center">
         <?php
         include_once("../modelo/manejo_objetos.php");
 
@@ -43,29 +47,32 @@
             if (empty($tabla_blog)){
                 echo "No hay publicaciones aun";
             }
-            else {
+            else {                                                   //Llama a los geters de manejo_objetos.php y los muestra.
                 foreach($tabla_blog as $valor) {
-                    echo "<h3>". $valor->getEspecie() . "</h3>";
-                    echo "<h3>". $valor->getRaza() . "</h3>";
-                    echo "<h3>". $valor->getColor() . "</h3>";
-                    echo "<h3>". $valor->getNombreanimal() . "</h3>";
+                    echo"<tb><tr><h3>Especie: ". $valor->getEspecie()."</h3></tr><br>";
+                    echo"<tr><h4>Raza: ". $valor->getRaza() ."</h4></tr><br>";
+                    echo"<tr><h4>Color: ".  $valor->getColor()."</h4></tr></br>";
+                    echo "<h4><tr>Nombre de la mascota: ". $valor->getNombreanimal(), "</h4></tr>";
                     if ($valor->getImagen() !="") {
-                        echo "<img src='../imagenes";
-                        echo $valor->getImagen() . "' width='300px' height='200px' />";
+                        echo "<img src='../imagenes/";
+                        echo $valor->getImagen() . "' width='45%' height='50%' />";
                     }
-                    echo "<hr/>";
-                    echo "<h3>". $valor->getFecha() . "</h3>";
-                    echo "<h3>". $valor->getZona() . "</h3>";
-                    echo "<h3>". $valor->getNombrepersona() . "</h3>";
-                    echo "<h3>". $valor->getTelefono() . "</h3>";
+                    echo "<tr><h4>Zona: ". $valor->getZona() . "</h4></tr><br>";
+                    echo"<tr><h4>Tutor/a: ". $valor->getNombrepersona() ."</h4></tr><br>";
+                    echo"<tr><h4>Telefono: ".  $valor->getTelefono()."</h4></tr><br>";
+                    echo"<tr><small>Fecha: ". $valor->getFecha()."</small></tr></tb><hr/><hr/><hr/>";
                 }
             }
+            echo "</div></div>";
         } catch (Exception $e) {
             die ("Error: " . $e->getMessage());
         }
         ?>
         <br>
-        <a href="formulariob.php">Volver a la pagina de insercion </a>
+        <div class="text-center">
+        <a href="../vista/inicio.html"><h3>Volver al Inicio</h3></a><br>
+        <a href="../vista/mostrar_public.php"><h3>Ver lista de Perdidos</h3></a>
+        </div>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>
