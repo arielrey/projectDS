@@ -43,35 +43,14 @@ public function getContenidoPorFecha(){
      return $matriz;
 }
 
+
 public function insertContenido(animal $blog){
 
-//    insertar contenido a la BD 
+    /*    insertar contenido a la BD 
+        $sql="INSERT INTO animales (especie, raza, color, nombreanimal, imagen, fecha, nombrepersona, telefono) VALUES ( '" . $blog->getEspecie() . "','" . $blog->getRaza() . "','" . $blog->getColor() . "','" . $blog->getNombreanimal() . "','" . $blog->getImagen() . "','" . $blog->getFecha() . "','" . $blog->getNombrepersona() . "','" . $blog->getTelefono() ."')";
 
-$sql="INSERT INTO animal (especie, raza, color, nombreanimal, imagen, fecha, zona, nombrepersona, telefono) VALUES";
-$sql=" (?,?,?,?,?,?,?,?,?)";
-$query=$this->conexion->prepare($sql);
-$especie=$blog->getEspecie();
-$raza=$blog->getRaza();
-$color=$blog->getColor();
-$nombreanimal=$blog->getNombreanimal();
-$imagen=$blog->getImagen();
-$fecha=$blog->getFecha();
-$zona=$blog->getZona();
-$nombrepersona=$blog->getNombrepersona();
-$telefono=$blog->getTelefono();
+        $this->conexion->exec($sql); */
 
-/*$query->bindValue("sssssssss", $especie, $raza, $color, $nombreanimal, $imagen, $fecha, $zona, $nombrepersona, $telefono);*/
-$query->bindValue(1, $especie, PDO::PARAM_STR);
-$query->bindValue(2, $raza, PDO::PARAM_STR);
-$query->bindValue(3, $color, PDO::PARAM_STR);
-$query->bindValue(4, $nombreanimal, PDO::PARAM_STR);
-$query->bindValue(5, $imagen, PDO::PARAM_STR);
-$query->bindValue(6, $fecha, PDO::PARAM_STR);
-$query->bindValue(7, $zona, PDO::PARAM_STR);
-$query->bindValue(8, $nombrepersona, PDO::PARAM_STR);
-$query->bindValue(9, $telefono, PDO::PARAM_STR);
-$query->execute();
+    } 
 }
-} 
-
 ?>

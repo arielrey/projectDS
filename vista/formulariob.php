@@ -30,7 +30,7 @@
         </nav>
         <h2  class="text-center">Publica los datos de tu mascota perdida 🐾</h2>
         <!-- FOMRULARIO -->
-        <form action="../controlador/transacciones.php" method="post" enctype="multipart/form-data" name="forml" class="shadow-lg p-3 mb-5 bg-body rounded container">
+        <form  method="post" action="../controlador/transacciones.php" enctype="multipart/form-data" name="forml" class="shadow-lg p-3 mb-5 bg-body rounded container">
             <table class="d-flex justify-content-center">
                 <div class="form-floating mb-3 justify-content-center">
                     <!-- Especie -->
@@ -100,10 +100,11 @@
             </table><br>
             <div class="container">
                 <div class="col-md-12 text-center">
-                    <input type="submit" value="Enviar" class="btn btn-success">
+                    <input type="submit" value="Enviar" class="btn btn-success" name="submit">
                     <input type="submit" value="Cancelar" class="btn btn-danger">
                 </div>
             </div>
+            <?php include_once("../controlador/transacciones.php"); ?>
         </form>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
