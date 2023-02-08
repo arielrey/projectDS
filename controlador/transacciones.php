@@ -86,6 +86,52 @@ if($_FILES['imagen']['error']){
     }
 ?>
     </div>
+  <!-- FOOTER -->
+  <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+    <div class="d-flex flex-column">
+      <div id="page-content">
+        <div class="container text-center">
+          <div class="row justify-content-center">
+            <div class="col-md-7">
+              <h1 class="fw-light mt-4 text-white">Gracias por visitarnos!</h1><br>
+                <p class="lead text-white-50">Mas informacion</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+          <h5>Github</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://github.com/arielrey" class="nav-link active">bethvalenti</a></li>
+            <li class="mb-2"><a href="https://github.com/bethvalenti"  class="nav-link active">arielrey</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2 mb-3">
+          <h5>Guides</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="inicio.html" class="nav-link active">Inicio</a></li>
+            <li class="mb-2"><a href="mostrar_public.php" class="nav-link active">Perdidos</a></li>
+            <li class="mb-2"><a href="formulariob.php" class="nav-link active">Buscar mascota</a></li>
+            <li class="mb-2"><a href="msjV.html" class="nav-link active">Adoptar</a></li>
+            <li class="mb-2"><a href="petshop.html" class="nav-link active">Petshop</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2 mb-3">
+          <h5>Contacto</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><p>341 278-4977 / 341 276-2260</p></li>
+            <li class="mb-2"><p>elizabethvalenti28@gmail.com</p></li>
+            <li class="mb-2"><p>reynacho163@gmail.com</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <small>Copyright 2023 &copy; Elizabeth Valenti - Ariel Rey</small>
+    </div> 
+  </footer>      
 <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>
