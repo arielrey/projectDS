@@ -7,7 +7,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     </head>
     <body>
-
+        
     <div class="text-center">
     <?php 
 
@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
  if ($resultado) {
     echo "<h3>Se cargo con exito</h3>";
 } else {
-    echo "No se cargo";
+    echo "<h2 style='color:red;'>No se cargó la publicación</h2>";
 }
 }   else {
     echo "Completar los campos";
@@ -55,11 +55,11 @@ if (isset($_POST['submit'])) {
 //insercion de imagen
 if($_FILES['imagen']['error']){
     switch ($_FILES ['imagen']['error']){
-        case 1: //error axceso del archivo
+        case 1: //error acceso del archivo
             echo "<h3>El archivo supera el limite permitido</h3>(param upload_max_size de php.ini)";
             break;
 
-        case 2://error axceso del archivo
+        case 2://error acceso del archivo
             echo "<h3>El archivo supera el limite permitido</h3>(post_max_size de php.ini)<br>";
             break;
 
