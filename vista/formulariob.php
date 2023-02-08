@@ -7,6 +7,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     </head>
     <body>
+<<<<<<< HEAD
 
                 <!-- LOGO -->
           
@@ -17,6 +18,10 @@
 
         <br><br><br>
         <h2  class="text-center">🐾Publica los datos de tu mascota perdida 🐾</h2> <br>
+=======
+        <br><br><br>
+        <h2  class="text-center">🐾Publica los datos de tu mascota perdida 🐾</h2><br>
+>>>>>>> a9b805e58a5a64e2fd79deed03f162a4f65120c3
         <!-- FOMRULARIO -->
         <form  method="post" action="../controlador/transacciones.php" enctype="multipart/form-data" name="forml" class="shadow-lg p-3 mb-5 bg-body rounded container">
             <table class="form">
