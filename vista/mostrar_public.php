@@ -59,7 +59,7 @@
             if (empty($tabla_blog)){
                 echo "No hay publicaciones aun";
             }
-            else {                                                  
+            else {
                  //Llama a los geters de manejo_objetos.php y los muestra.
                  foreach($tabla_blog as $valor) {
                     echo"<tr><h4>".  $valor->getId()."</h4></tr><br>";

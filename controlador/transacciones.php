@@ -42,19 +42,19 @@
 if($_FILES['imagen']['error']){
     switch ($_FILES ['imagen']['error']){
         case 1: //error acceso del archivo
-            echo "<div class='alert alert-danger' role='alert'>El archivo supera el limite permitido</div>(param upload_max_size de php.ini)";
+            echo "<div class='alert alert-danger' role='alert'><h3>El archivo supera el limite permitido</h3></div>(param upload_max_size de php.ini)";
             break;
 
         case 2://error acceso del archivo
-            echo "<div class='alert alert-danger' role='alert'>El archivo supera el limite permitido</div>(post_max_size de php.ini)<br>";
+            echo "<div class='alert alert-danger' role='alert'><h3>El archivo supera el limite permitido</h3></div>(post_max_size de php.ini)<br>";
             break;
 
         case 3: //error de interrupcion durante subida
-            echo "<div class='alert alert-danger' role='alert'>El envio del archivo se interrumpio</div><br>";
+            echo "<div class='alert alert-danger' role='alert'><h3>El envio del archivo se interrumpio</h3></div><br>";
             break;
         
         case 4:
-            echo "<div class='alert alert-danger' role='alert'>El archivo es nulo</div><br>";
+            echo "<div class='alert alert-danger' role='alert'><h3>El archivo es nulo</h3></div><br>";
             break;
     }
     }
@@ -65,9 +65,9 @@ if($_FILES['imagen']['error']){
             $destino_de_ruta='../imagenes/';
 
             move_uploaded_file($_FILES['imagen']['tmp_name'], $destino_de_ruta . $_FILES['imagen']['name']);
-            echo "El archivo '" . $_FILES['imagen']['name'] . "' Se ha guardado correctamente.</div><br>";
+            echo "</div>";
         }else{
-            echo "<div class='alert alert-danger' role='alert'>El archivo no se cargo con exito</div>";
+            echo "<div class='alert alert-danger' role='alert'><h3>El archivo no se cargo con exito</h3></div>";
         }    
     }
 ?>
