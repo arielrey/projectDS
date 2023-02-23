@@ -86,8 +86,8 @@
         <div class="col-6 col-lg-2 offset-lg-1 mb-3">
           <h5>Github</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="https://github.com/arielrey" class="nav-link active">bethvalenti</a></li>
-            <li class="mb-2"><a href="https://github.com/bethvalenti"  class="nav-link active">arielrey</a></li>
+            <li class="mb-2"><a href="https://github.com/bethvalenti" class="nav-link active">bethvalenti</a></li>
+            <li class="mb-2"><a href="https://github.com/arielrey"  class="nav-link active">arielrey</a></li>
           </ul>
         </div>
         <div class="col-6 col-lg-2 mb-3">
