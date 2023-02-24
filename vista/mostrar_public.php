@@ -64,7 +64,7 @@
           
         <div class="text-center">
           <h1 class="display-4">Lista de perdidos</h1><br>
-          <font size="5" color="#2d572c"> Si perdiste a tu mascota, realiza una publicacion para mas posibilidades de encontrarlo, te deseamos mucha suerte </font>
+         
         </div>
         <br>
         <div class="container text-center">
@@ -92,7 +92,7 @@
                     echo "<h4><tr>Nombre de la mascota: ". $valor->getNombreanimal(), "</h4></tr>";
                     if ($valor->getImagen() !="") {
                         echo "<img src='../imagenes/";
-                        echo $valor->getImagen() . "' width='45%' height='50%' />";
+                        echo $valor->getImagen() . "' width='80%' height='80%' />";
                     }
                     echo "<tr><h4>Zona: ". $valor->getZona() . "</h4></tr><br>";
                     echo"<tr><h4>Tutor/a: ". $valor->getNombrepersona() ."</h4></tr><br>";

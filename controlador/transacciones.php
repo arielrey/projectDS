@@ -107,7 +107,7 @@ if (isset($_POST['submit'])) {
         $zona = trim($_POST['zona']);
         $nombrepersona = trim($_POST['nombrepersona']);
         $telefono = trim($_POST['telefono']);
-	    $consulta = "INSERT INTO animal(especie, raza, color, nombreanimal, imagen, fecha, nombrepersona, telefono) VALUES ('$especie','$raza','$color','$nombreanimal','$imagen','$fecha','$nombrepersona','$telefono')";
+	    $consulta = "INSERT INTO animal(especie, raza, color, nombreanimal, imagen, fecha, zona, nombrepersona, telefono) VALUES ('$especie','$raza','$color','$nombreanimal','$imagen','$fecha','$zona','$nombrepersona','$telefono')";
 	    $resultado = mysqli_query($conexion,$consulta);
 	   
 }
