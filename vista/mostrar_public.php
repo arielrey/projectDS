@@ -30,8 +30,29 @@
                     <li><a class="dropdown-item" href="msjV.html">Dar en Adopcion</a></li>
                 </ul>
             </div>
-            
-            <a href="petshop.html" class="nav-link active">          
+            <button class="btn nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Nosotros</button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Nuestro Sitio</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div class="alert alert-info" role="alert">
+                <h4>En este sitio vas a encontrar y realizar publicaciones con fotos y datos de mascotas perdidas en Rosario.
+                ¡no hace falta que sea una mascota tuya, tambien puede ser un aviso que viste en la calle para ayudar a difundir!🐾</h4>
+                </div>
+                <br><br><br>
+                <h5>¿Por que Pichos Ros?</h5><br>
+                <div class="alert alert-info" role="alert">
+                  <h4>
+                  - Ciuda tus datos personales <br>
+                  - Es facil de usar <br>
+                  - Encontras nuevas tiendas <br>
+                  </h4>
+                  </div>
+              </div>
+            </div>
+            <a href="petshop.html" class="nav-link active">Tienda       
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                 </svg>
@@ -40,12 +61,15 @@
 
         <!--Lista de animales perdidos-->
         <div class="text-center">
-        <h1>Lista de perdidos</h1>
-        <h4>Si perdiste a tu mascota, realiza una publicacion para mas posibilidades de encontrarl@, te deseamos mucha suerte</h4></div>
+          
+        <div class="text-center">
+          <h1 class="display-4">Lista de perdidos</h1><br>
+          <font size="5" color="#2d572c"> Si perdiste a tu mascota, realiza una publicacion para mas posibilidades de encontrarlo, te deseamos mucha suerte </font>
+        </div>
         <br>
-        <div class="shadow-lg p-3 mb-5 bg-body rounded container">
-
-            <div class="text-center">
+        <div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col-4"></br>
         <?php
         include_once("../modelo/manejo_objetos.php");
 
@@ -53,7 +77,6 @@
         try {
             $miconexion=new PDO('mysql:host=localhost; dbname=animalbd', 'root', '');
             $miconexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
             $manejo_objetos=new manejo_objetos($miconexion);
             $tabla_blog=$manejo_objetos->getContenidoPorFecha();
             if (empty($tabla_blog)){
@@ -61,8 +84,8 @@
             }
             else {
                  //Llama a los geters de manejo_objetos.php y los muestra.
-                 foreach($tabla_blog as $valor) {
-                    echo"<tr><h4>".  $valor->getId()."</h4></tr><br>";
+                 foreach($tabla_blog as $valor) {                  
+                    echo"<div class='container card'></br><tr><h4>".  $valor->getId()."</h4></tr><br>";
                     echo"<tb><tr><h3>Especie: ". $valor->getEspecie()."</h3></tr><br>";
                     echo"<tr><h4>Raza: ". $valor->getRaza() ."</h4></tr><br>";
                     echo"<tr><h4>Color: ".  $valor->getColor()."</h4></tr></br>";
@@ -74,20 +97,15 @@
                     echo "<tr><h4>Zona: ". $valor->getZona() . "</h4></tr><br>";
                     echo"<tr><h4>Tutor/a: ". $valor->getNombrepersona() ."</h4></tr><br>";
                     echo"<tr><h4>Telefono: ".  $valor->getTelefono()."</h4></tr><br>";
-                    echo"<tr><small>Fecha: ". $valor->getFecha()."</small></tr><br>";
-                    echo"<a href='update.php'><div class='text-end'><tr><img src='img/lapiz.png' width='30'/></tr></a><hr/><hr/><hr/></tb></div>";
+                    echo"<div class='alert alert-primary' role='alert'><tr><small>Fecha: ". $valor->getFecha()."</small></tr></div>";
+                    echo"</tr><hr/></tb></div></div></br><div class='col-4'></br>";
                 }
             }
-            echo "</div></div>";
+            echo "</div></div></div>";
         } catch (Exception $e) {
             die ("Error: " . $e->getMessage());
         }
-        ?>
-        <br>
-        <div class="text-center">
-        <a href="../vista/inicio.html"><h3>Volver al Inicio</h3></a><br>
-        <a href="../vista/mostrar_public.php"><h3>Ver lista de Perdidos</h3></a>
-        </div>
+        ?><br><br><br>
   <!-- FOOTER -->
   <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
     <div class="d-flex flex-column">
@@ -123,7 +141,6 @@
         <div class="col-6 col-lg-2 mb-3">
           <h5>Contacto</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><p>341 278-4977 / 341 276-2260</p></li>
             <li class="mb-2"><p>elizabethvalenti28@gmail.com</p></li>
             <li class="mb-2"><p>reynacho163@gmail.com</p></li>
           </ul>

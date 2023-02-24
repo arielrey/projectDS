@@ -103,7 +103,6 @@
         <div class="col-6 col-lg-2 mb-3">
           <h5>Contacto</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><p>341 278-4977 / 341 276-2260</p></li>
             <li class="mb-2"><p>elizabethvalenti28@gmail.com</p></li>
             <li class="mb-2"><p>reynacho163@gmail.com</p></li>
           </ul>

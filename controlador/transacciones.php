@@ -29,6 +29,28 @@
                   <li><a class="dropdown-item" href="../vista/msjV.html">Dar en Adopcion</a></li>
               </ul>
           </div>
+          <button class="btn nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Nosotros</button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Nuestro Sitio</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div class="alert alert-info" role="alert">
+                <h4>En este sitio vas a encontrar y realizar publicaciones con fotos y datos de mascotas perdidas en Rosario.
+                ¡no hace falta que sea una mascota tuya, tambien puede ser un aviso que viste en la calle para ayudar a difundir!🐾</h4>
+                </div>
+                <br><br><br>
+                <h5>¿Por que Pichos Ros?</h5><br>
+                <div class="alert alert-info" role="alert">
+                  <h4>
+                  - Ciuda tus datos personales <br>
+                  - Es facil de usar <br>
+                  - Encontras nuevas tiendas <br>
+                  </h4>
+                  </div>
+              </div>
+            </div>
           <a href="../vista/petshop.html" class="nav-link active">Tienda          
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
